@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChowdownBBQ</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: white;
-        }
-        header {
-            background-color: #111;
-            padding: 20px;
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: orange;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .header-container img {
-            width: 180px;
-            height: auto;
-        }
-        .header-text {
-            max-width: 500px;
-        }
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .header-text p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-        footer {
-            background-color: #111;
-            color: #ccc;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>ChowdownBBQ - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#1a1a1a; color:#fff }
+
+    /* Header (matches other pages) */
+    header {
+      padding: 24px 16px;
+      background: #b22222;
+    }
+    .header-flex {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center;
+    }
+    .header-flex img {
+      width: 120px; height: 120px; object-fit: contain;
+      border: 2px solid #ff6600; border-radius: 12px; background:#111;
+    }
+    .header-flex h1 { margin:0; font-size:2.2rem }
+    .header-flex p { margin:.35rem 0 0 }
+    @media (max-width: 560px){
+      .header-flex { grid-template-columns: 1fr; text-align:center }
+      .header-flex img { margin:0 auto; width:100px; height:100px }
+    }
+
+    /* Sitewide nav (same as other pages) */
+    .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
+    .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
+    .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
+    .topnav a:hover{ background:#222; color:#ff6600 }
+
+    /* Home content */
+    .intro { padding:30px 16px; text-align:center; max-width:900px; margin:0 auto }
+    .intro p { font-size:1.1rem; line-height:1.6 }
+    .button { display:inline-block; margin-top:18px; padding:12px 20px; background:#ff6600; color:#fff; text-decoration:none; font-weight:bold; border-radius:6px }
+    .button:hover { filter:brightness(1.06) }
+
+    .gear-preview { background:#2c2c2c; padding:40px 16px }
+    .gear-preview h2 { text-align:center; margin:0 0 24px }
+    .gear-list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1100px; margin:0 auto }
+    .gear-item { background:#333; border:1px solid #444; padding:20px; width:260px; border-radius:8px }
+    .gear-item h3 { margin:0 0 8px }
+    .gear-item a { color:#fff; background:#ff6600; display:inline-block; margin-top:10px; padding:8px 12px; border-radius:6px; text-decoration:none }
+    .gear-item a:hover { filter:brightness(1.06) }
+
+    footer { text-align:center; padding:20px; font-size:.9rem; background:#111; color:#888 }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Gear</a>
-            <a href="services.html">Services</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="blog.html">Blog</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <div class="header-container">
-            <img src="images/salty_camo_transparent_1000px.png" alt="Salty - ChowdownBBQ">
-            <div class="header-text">
-                <h1>Welcome to ChowdownBBQ</h1>
-                <p>Gear, grit, and grillin’ with Salty. Explore the best BBQ gear, tips, and recipes for true pitmasters and beginners alike.</p>
-            </div>
-        </div>
-    </header>
 
-    <main style="text-align:center; padding:40px;">
-        <h2>Featured BBQ Gear</h2>
-        <p>Check out our recommended grills, smokers, and must-have BBQ tools.</p>
-        <a href="products.html" style="color:orange; font-weight:bold;">See the Gear</a>
-    </main>
+  <!-- Header with Salty on the left, text on the right -->
+  <header>
+    <div class="header-flex">
+      <img src="images/salty_camo_transparent_1000px.png" alt="Salty — ChowdownBBQ"
+           onerror="this.style.display='none'">
+      <div>
+        <h1>Welcome to ChowdownBBQ</h1>
+        <p>Gear, Grit, and Grillin' with Salty</p>
+      </div>
+    </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 ChowdownBBQ | Gear Up & Grill On</p>
-    </footer>
+  <!-- Consistent nav -->
+  <nav class="topnav" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro">
+    <p>From 20 years in a Navy submarine galley to mastering the backyard smoker — Salty’s here to show you how real BBQ is done. No fluff. No shortcuts. Just fire, flavor, and tools that work.</p>
+    <a href="products.html" class="button">See the Gear</a>
+  </section>
+
+  <section class="gear-preview">
+    <h2>Starter Gear Picks</h2>
+    <div class="gear-list">
+      <div class="gear-item">
+        <h3>Z Grills Smoker</h3>
+        <p>Perfect for beginners who want real smoke flavor with set-it-and-forget-it ease.</p>
+        <a href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+      <div class="gear-item">
+        <h3>BBQGuys Thermometer</h3>
+        <p>Take the guesswork out of temp. Get it right every time.</p>
+        <a href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+      <div class="gear-item">
+        <h3>Amazon Tool Set</h3>
+        <p>Everything you need to flip, grip, and grill without burning your knuckles.</p>
+        <a href="https://www.amazon.com/dp/B07P9VGBPR?tag=YOURTAG-20" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Get Salty's Free BBQ Guide</h2>
+    <p>Download our free PDF: <strong>"Top 10 BBQ Mistakes to Avoid"</strong></p>
+    <a href="Top-10-BBQ-Mistakes.pdf" class="button" download>Download Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ChowdownBBQ • Built with grit</p>
+  </footer>
+
 </body>
 </html>
