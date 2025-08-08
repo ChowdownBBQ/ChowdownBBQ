@@ -2,66 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BBQ Services - ChowdownBBQ</title>
+  <title>Services - ChowdownBBQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      margin: 0; padding: 0;
-    }
-    header {
-      background-color: #b22222;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .services {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #ff6600;
-    }
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: #888;
-    }
+    body { font-family: Arial, sans-serif; background:#1a1a1a; color:#fff; margin:0 }
+    header { background:#b22222; padding:20px; text-align:center }
+    header h1 { margin:0 }
+    header p { margin:6px 0 0 }
+    /* Top navigation (consistent sitewide) */
+    .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
+    .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
+    .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
+    .topnav a:hover{ background:#222; color:#ff6600 }
+    .wrap { max-width:900px; margin:0 auto; padding:40px 16px }
+    h2 { color:#ff6600; margin-top:0 }
+    section { margin-bottom:40px; padding-bottom:20px; border-bottom:1px solid #444 }
+    footer { text-align:center; padding:20px; font-size:.9rem; background:#111; color:#888 }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>ChowdownBBQ Services</h1>
+    <h1>Our Services</h1>
+    <p>From your backyard to the big leagues — we’ve got you covered.</p>
   </header>
 
-  <section class="services">
-    <p>Need a hand with your BBQ setup? Don’t stress it. Salty's got you covered with working-class service built on experience, not ego.</p>
-
-    <h2>🔥 Available Services</h2>
+  <!-- Consistent nav -->
+  <nav class="topnav" aria-label="Main Navigation">
     <ul>
-      <li><strong>Grill Cleaning & Maintenance:</strong> Deep cleans, grate scrubs, and smoke box resets. Your gear deserves it.</li>
-      <li><strong>Small Event Catering:</strong> Backyard cookouts, veterans' groups, local meetups. Feed ‘em right.</li>
-      <li><strong>Smoker Setup & Walkthrough:</strong> New rig? I’ll help you set it up, dial it in, and show you how not to mess it up.</li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+  </nav>
 
-    <p>Want to schedule something? <a href="contact.html">Reach out here.</a></p>
-  </section>
+  <main class="wrap">
+
+    <section>
+      <h2>BBQ Catering</h2>
+      <p>Got a wedding, company event, or block party? We bring the pit to you. Authentic slow-smoked meats, sides, and that signature Salty touch.</p>
+      <p><strong>Perfect for:</strong> 20–200 guests • Includes smoker setup • Staffed service available</p>
+    </section>
+
+    <section>
+      <h2>Grill Cleaning & Maintenance</h2>
+      <p>Don’t let last season’s grease ruin this season’s flavor. We deep-clean your smoker or grill, inside and out, to keep it safe, tasty, and running hot.</p>
+      <p><strong>Includes:</strong> Full grate scrub • Firebox clean-out • Hardware check</p>
+    </section>
+
+    <section>
+      <h2>Private Pitmaster Lessons</h2>
+      <p>Want to up your BBQ game? Learn one-on-one with Salty. From fire control to meat prep, you’ll get hands-on tips you won’t find in a cookbook.</p>
+      <p><strong>Options:</strong> 2-hour beginner class • 4-hour advanced smoke session</p>
+    </section>
+
+    <section>
+      <h2>Custom Meat Prep</h2>
+      <p>Bring your brisket, ribs, or wild game — we’ll trim, season, and prep it for the perfect smoke. You handle the cooking, we handle the hard part.</p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>&copy; 2025 ChowdownBBQ • Service with smoke, not fluff</p>
+    <p>&copy; 2025 ChowdownBBQ • Serving heat with heart</p>
   </footer>
-
 </body>
 </html>
