@@ -5,52 +5,44 @@
   <title>Salty's Pit Talk - ChowdownBBQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      margin: 0; padding: 0;
-    }
-    header {
-      background-color: #b22222;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .blog {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-    }
-    article {
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #444;
-    }
-    h2 {
-      color: #ff6600;
-    }
-    a {
-      color: #ff6600;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: #888;
-    }
+    body { font-family: Arial, sans-serif; background:#1a1a1a; color:#fff; margin:0 }
+    header { background:#b22222; padding:20px; text-align:center }
+    header h1 { margin:0 }
+    header p { margin:6px 0 0 }
+    /* Top navigation (consistent sitewide) */
+    .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
+    .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
+    .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
+    .topnav a:hover{ background:#222; color:#ff6600 }
+    .wrap { max-width:800px; margin:0 auto; padding:40px 16px }
+    article { margin-bottom:40px; padding-bottom:20px; border-bottom:1px solid #444 }
+    h2 { color:#ff6600; margin:0 0 10px }
+    a { color:#ff6600; }
+    footer { text-align:center; padding:20px; font-size:.9rem; background:#111; color:#888 }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Salty’s Pit Talk</h1>
+    <p>No-nonsense BBQ from the galley to the grill.</p>
   </header>
 
-  <section class="blog">
+  <!-- Consistent nav -->
+  <nav class="topnav" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="wrap">
 
     <article>
       <h2>5 Mistakes Every New Pitmaster Makes</h2>
@@ -58,30 +50,27 @@
       <ul>
         <li>🔥 Don’t skip preheating — your smoker needs time.</li>
         <li>🔥 Stop checking the meat every 10 minutes — trust the process.</li>
-        <li>🔥 Use a damn thermometer — guessing doesn’t work.</li>
+        <li>🔥 Use a thermometer — guessing doesn’t work.</li>
         <li>🔥 Don’t overload the grill — learn one meat at a time.</li>
-        <li>🔥 Clean your gear — it ain’t seasoning if it’s 3-week-old fat.</li>
+        <li>🔥 Clean your gear — it ain’t “seasoning” if it’s old grease.</li>
       </ul>
-      <p><strong>Tool you need:</strong> <a href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank">BBQGuys Thermometer</a></p>
+      <p><strong>Tool you need:</strong> <a href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener">BBQGuys Thermometer</a></p>
     </article>
 
     <article>
       <h2>What I Learned Cooking for 140 Sailors a Day</h2>
-      <p>On a submarine, there’s no room for excuses. You make food fast, hot, and right. That work ethic? It built ChowdownBBQ.</p>
-      <p>Whether you're feeding a crew or just your own, remember: prep matters. Don’t show up to your own cookout unprepared.</p>
+      <p>On a submarine, there’s no room for excuses. You make food fast, hot, and right. That work ethic? It built ChowdownBBQ. Whether you're feeding a crew or just your own, prep is everything — don’t show up to your own cookout unprepared.</p>
     </article>
 
     <article>
       <h2>How to Handle Heat Like a Pro</h2>
-      <p>Good BBQ ain't about sauce. It’s about heat control. Direct vs indirect. Hot zone vs cool zone. Don’t just crank it and pray.</p>
-      <p>Start with a 2-zone fire. Sear on one side. Finish slow on the other. Use wood chunks, not just chips. Let the smoke work for you.</p>
+      <p>Good BBQ isn’t about sauce. It’s about heat control. Direct vs. indirect. Hot zone vs. cool zone. Start with a 2-zone fire: sear on one side, finish slow on the other. Use wood chunks, not chips. Let the smoke do the work.</p>
     </article>
 
-  </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 ChowdownBBQ • No-nonsense BBQ tips from the galley to the grill</p>
+    <p>&copy; 2025 ChowdownBBQ • Keep the smoke rolling</p>
   </footer>
-
 </body>
 </html>
