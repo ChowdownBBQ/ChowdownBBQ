@@ -5,96 +5,82 @@
   <title>Recommended Gear - ChowdownBBQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      margin: 0; padding: 0;
-    }
-    header {
-      background-color: #b22222;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .products {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gear-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-    .gear-item {
-      background: #2c2c2c;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #444;
-      width: 280px;
-    }
-    .gear-item h2 {
-      margin-top: 0;
-      color: #ff6600;
-    }
-    .gear-item p {
-      margin-bottom: 10px;
-    }
-    .gear-item a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: #888;
-    }
+    body{ font-family: Arial, sans-serif; background:#1a1a1a; color:#fff; margin:0 }
+    header{ background:#b22222; padding:20px; text-align:center }
+    header h1{ margin:0 }
+    .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
+    .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
+    .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
+    .topnav a:hover{ background:#222; color:#ff6600 }
+    .wrap{ max-width:1100px; margin:0 auto; padding:32px 16px }
+    .lead{ color:#ddd; text-align:center; margin-bottom:22px }
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:18px }
+    .card{ background:#2c2c2c; border:1px solid #444; border-radius:12px; overflow:hidden; display:flex; flex-direction:column }
+    .card img{ width:100%; height:auto; display:block }
+    .card h2{ margin:14px 14px 6px; color:#ff6600; font-size:1.15rem }
+    .card p{ margin:0 14px 14px; color:#ddd }
+    .actions{ margin:auto 14px 16px 14px }
+    .btn{ display:inline-block; padding:10px 14px; background:#ff6600; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold }
+    .btn:hover{ filter:brightness(1.06) }
+    footer{ text-align:center; padding:20px; font-size:.9rem; background:#111; color:#888 }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Salty’s Gear Picks</h1>
+    <p>Legit tools. No gimmicks.</p>
   </header>
 
-  <section class="products">
-    <p>These are the tools I trust. Whether you're just getting started or upgrading your pit, these are legit — no gimmicks, no BS.</p>
+  <!-- Consistent nav -->
+  <nav class="topnav" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="gear-grid">
-      <div class="gear-item">
+  <main class="wrap">
+    <p class="lead">These are starter picks I trust. If you’re a beginner, this combo will get you turning out good food fast.</p>
+
+    <section class="grid">
+      <article class="card">
+        <img src="https://placehold.co/800x500?text=Z+Grills+Pellet+Smoker" alt="Z Grills pellet smoker">
         <h2>Z Grills Pellet Smoker</h2>
-        <p>Set it and forget it. Wood-fired flavor made simple. Great for beginners and weekend warriors.</p>
-        <a href="https://zgrills.com/?aff=4738" target="_blank">Buy from Z Grills</a>
-      </div>
+        <p>Set it and forget it. Wood-fired flavor with simple controls — perfect for new pitmasters.</p>
+        <div class="actions">
+          <a class="btn" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener">Buy from Z Grills</a>
+        </div>
+      </article>
 
-      <div class="gear-item">
+      <article class="card">
+        <img src="https://placehold.co/800x500?text=BBQGuys+Thermometer" alt="BBQGuys digital thermometer">
         <h2>BBQGuys Digital Thermometer</h2>
-        <p>Don't ruin good meat with guesswork. This thermometer reads fast and accurate every time.</p>
-        <a href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank">Buy from BBQGuys</a>
-      </div>
+        <p>Stop guessing doneness. Read temps fast and accurate so you don’t wreck the meat.</p>
+        <div class="actions">
+          <a class="btn" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener">Buy from BBQGuys</a>
+        </div>
+      </article>
 
-      <div class="gear-item">
+      <article class="card">
+        <img src="https://placehold.co/800x500?text=Amazon+Tool+Set" alt="27 piece BBQ tool kit">
         <h2>Amazon 27-Piece Tool Set</h2>
-        <p>Grill tongs, spatulas, skewers — it’s all in one kit. Affordable and durable.</p>
-        <a href="https://www.amazon.com/dp/B07P9VGBPR?tag=chowdownbbq20-20" target="_blank">Buy on Amazon</a>
-      </div>
-    </div>
-  </section>
+        <p>Everything you need to flip, grip, glaze, and clean — in one affordable kit.</p>
+        <div class="actions">
+          <!-- Replace YOURTAG-20 with your actual Amazon Associates tag -->
+          <a class="btn" href="https://www.amazon.com/dp/B07P9VGBPR?tag=YOURTAG-20" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 ChowdownBBQ • Affiliate links used with grit and honesty</p>
   </footer>
-
 </body>
 </html>
