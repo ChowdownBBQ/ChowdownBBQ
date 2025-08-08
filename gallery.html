@@ -7,8 +7,7 @@
   <style>
     body { background:#1a1a1a; font-family: Arial, sans-serif; color:#fff; margin:0 }
     header { background:#b22222; padding:20px; text-align:center }
-    header h1{ margin:0 }
-    header p{ margin:6px 0 0 }
+    header h1{ margin:0 } header p{ margin:6px 0 0 }
     .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
     .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
     .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
@@ -22,94 +21,29 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>ChowdownBBQ Gallery</h1>
-    <p>Real smoke. Real shots. Real meat.</p>
-  </header>
+  <header><h1>ChowdownBBQ Gallery</h1><p>Real smoke. Real shots. Real meat.</p></header>
 
-  <!-- Consistent nav -->
   <nav class="topnav" aria-label="Main Navigation">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="products.html">Gear</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main class="wrap">
     <div class="grid">
-
-      <!-- Inline SVG placeholders: no external host needed -->
-      <div class="card">
-        <img alt="Brisket on the smoker"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Brisket on the Pit</text>
-             </svg>' />
-        <p>Brisket day — low and slow.</p>
-      </div>
-
-      <div class="card">
-        <img alt="Ribs ready to glaze"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Ribs Ready</text>
-             </svg>' />
-        <p>Ribs glazed and ready to rest.</p>
-      </div>
-
-      <div class="card">
-        <img alt="Pellet smoker in action"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Pellet Smoker</text>
-             </svg>' />
-        <p>Pellet smoker doing work.</p>
-      </div>
-
-      <div class="card">
-        <img alt="Two-zone charcoal setup"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Charcoal Setup</text>
-             </svg>' />
-        <p>Two-zone charcoal setup — control the heat.</p>
-      </div>
-
-      <div class="card">
-        <img alt="BBQ chicken quarters"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Chicken Quarters</text>
-             </svg>' />
-        <p>Chicken quarters with crispy skin.</p>
-      </div>
-
-      <div class="card">
-        <img alt="BBQ tools"
-             src='data:image/svg+xml;utf8,
-             <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-               <rect width="100%" height="100%" fill="#222"/>
-               <text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Tools of the Trade</text>
-             </svg>' />
-        <p>Tools of the trade: tongs, gloves, thermometer.</p>
-      </div>
-
+      <!-- Inline SVG placeholders, replace with your own images later -->
+      <div class="card"><img alt="Brisket on the smoker" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Brisket on the Pit</text></svg>' /><p>Brisket day — low and slow.</p></div>
+      <div class="card"><img alt="Ribs ready to glaze" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Ribs Ready</text></svg>' /><p>Ribs glazed and ready to rest.</p></div>
+      <div class="card"><img alt="Pellet smoker in action" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Pellet Smoker</text></svg>' /><p>Pellet smoker doing work.</p></div>
+      <div class="card"><img alt="Two-zone charcoal setup" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Charcoal Setup</text></svg>' /><p>Two-zone charcoal setup — control the heat.</p></div>
+      <div class="card"><img alt="BBQ chicken quarters" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Chicken Quarters</text></svg>' /><p>Chicken quarters with crispy skin.</p></div>
+      <div class="card"><img alt="BBQ tools" src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#ff6600" font-size="36" font-family="Arial" text-anchor="middle" dominant-baseline="middle">Tools of the Trade</text></svg>' /><p>Tools of the trade: tongs, gloves, thermometer.</p></div>
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 ChowdownBBQ • From the galley to the grill</p>
-  </footer>
+  <footer><p>&copy; 2025 ChowdownBBQ • From the galley to the grill</p></footer>
 </body>
 </html>

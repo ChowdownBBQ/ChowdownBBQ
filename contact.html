@@ -7,8 +7,7 @@
   <style>
     body { font-family: Arial, sans-serif; background:#1a1a1a; color:#fff; margin:0 }
     header { background:#b22222; padding:20px; text-align:center }
-    header h1 { margin:0 }
-    header p { margin:6px 0 0 }
+    header h1 { margin:0 } header p { margin:6px 0 0 }
     .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
     .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
     .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
@@ -22,41 +21,27 @@
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Contact ChowdownBBQ</h1>
-    <p>Questions, quotes, or gear help? Hit us up.</p>
-  </header>
+  <header><h1>Contact ChowdownBBQ</h1><p>Questions, quotes, or gear help? Hit us up.</p></header>
 
   <nav class="topnav" aria-label="Main Navigation">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="products.html">Gear</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="products.html">Gear</a></li>
+      <li><a href="gallery.html">Gallery</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main class="wrap">
-    <!-- Netlify form -->
     <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
-      <label for="name">Name</label>
-      <input required id="name" name="name" type="text" />
-      <label for="email">Email</label>
-      <input required id="email" name="email" type="email" />
-      <label for="message">Message</label>
-      <textarea required id="message" name="message" rows="6"></textarea>
+      <label for="name">Name</label><input required id="name" name="name" type="text" />
+      <label for="email">Email</label><input required id="email" name="email" type="email" />
+      <label for="message">Message</label><textarea required id="message" name="message" rows="6"></textarea>
       <button type="submit">Send It</button>
     </form>
   </main>
 
-  <footer>
-    <p>&copy; 2025 ChowdownBBQ • Built for real folks who grill</p>
-  </footer>
+  <footer><p>&copy; 2025 ChowdownBBQ • Built for real folks who grill</p></footer>
 </body>
 </html>
