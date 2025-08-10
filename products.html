@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>BBQ Gear - ChowdownBBQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>ChowdownBBQ - Gear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body{ font-family: Arial, sans-serif; background:#1a1a1a; color:#fff; margin:0 }
-    header{ background:#b22222; padding:20px; text-align:center }
-    header h1{ margin:0 } header p{ margin:6px 0 0 }
-    .topnav{ background:#111; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a }
-    .topnav ul{ list-style:none; margin:0; padding:0 10px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center }
-    .topnav a{ display:block; padding:12px 14px; color:#fff; text-decoration:none; border-radius:6px }
-    .topnav a:hover{ background:#222; color:#ff6600 }
-    .wrap{ max-width:1000px; margin:0 auto; padding:40px 16px }
-    h2{ color:#ff6600 }
-    .gear-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px }
-    .gear-card{ background:#222; border:1px solid #444; border-radius:10px; overflow:hidden; box-shadow:0 0 6px rgba(0,0,0,.35) }
-    .gear-card img{ width:100%; height:200px; object-fit:cover }
-    .gear-card h3{ margin:12px; font-size:1.2rem }
-    .gear-card p{ margin:0 12px 12px; color:#ddd }
-    .gear-card a{ display:block; margin:12px; padding:10px; text-align:center; background:#ff6600; color:#fff; border-radius:6px; text-decoration:none }
-    .gear-card a:hover{ filter:brightness(1.06) }
-    footer{ text-align:center; padding:20px; font-size:.9rem; background:#111; color:#888 }
+    :root{--bg:#FAF3E0;--surface:#FFF9EE;--text:#2B2B2B;--muted:#5A5A5A;--accent:#4A90E2;--copper:#B87333;--cta:#E4572E;--border:#E6DCC8;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)}
+    html,body{background:var(--bg);color:var(--text);margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+    .container{width:min(1200px,92%);margin:0 auto}
+    header{position:sticky;top:0;background:rgba(255,249,238,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+    .navbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand-logo{width:42px;height:42px;border-radius:50%;background: radial-gradient(100% 100% at 50% 0%, #FFE7D7 0%, #FFF2E7 40%, #FFD3BE 100%);border:1px solid var(--border);box-shadow:var(--shadow)}
+    .brand-name{font-size:clamp(20px,2vw,24px)}.brand-tag{color:var(--copper)}
+    nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--text)}nav a:hover{background:var(--surface)}
+    .cta{display:inline-block;font-weight:800;background:var(--cta);color:#fff;padding:10px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.04);box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(1.05)}
+    .section{padding:34px 0}
+    h1{font-size:clamp(28px,4vw,40px);margin:12px 0}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .col-3{grid-column:span 3}
+    .col-4{grid-column:span 4}
+    .col-12{grid-column:span 12}
+    @media (max-width:1000px){.col-3,.col-4{grid-column:span 6}} @media (max-width:700px){.col-3,.col-4{grid-column:span 12}}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;border:1px solid transparent}
+    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{filter:brightness(1.05)}
+    footer{margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+    .note{color:var(--muted);font-size:.95rem}
   </style>
 </head>
 <body>
-  <header><h1>BBQ Gear</h1><p>Tools and accessories Salty swears by.</p></header>
-
-  <nav class="topnav" aria-label="Main Navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li><li><a href="products.html">Gear</a></li>
-      <li><a href="gallery.html">Gallery</a></li><li><a href="services.html">Services</a></li>
-      <li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main class="wrap">
-    <h2>Featured Gear</h2>
-    <div class="gear-grid">
-      <div class="gear-card">
-        <img src="images/smoker-placeholder.jpg" alt="BBQ Smoker">
-        <h3>Z Grills Pellet Smoker</h3>
-        <p>Set it and forget it. Wood-fired flavor with simple controls — perfect for new pitmasters.</p>
-        <a href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener">Buy from Z Grills</a>
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">CHOWDOWN<span class="brand-tag">BBQ</span></div>
+          <div style="font-size:12px;color:#7A624A;">Gear • Grit • Grillin’</div>
+        </div>
       </div>
-      <div class="gear-card">
-        <img src="images/thermometer-placeholder.jpg" alt="Digital Meat Thermometer">
-        <h3>BBQGuys Digital Thermometer</h3>
-        <p>Stop guessing doneness. Read temps fast and accurate so you don’t wreck the meat.</p>
-        <a href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener">Buy from BBQGuys</a>
-      </div>
-      <div class="gear-card">
-        <img src="images/knife-placeholder.jpg" alt="BBQ Knife Set">
-        <h3>Amazon 27-Piece Tool Set</h3>
-        <p>Everything you need to flip, grip, glaze, and clean — in one affordable kit.</p>
-        <a href="https://www.amazon.com/dp/B07P9VGBPR?tag=YOURTAG-20" target="_blank" rel="noopener">Buy on Amazon</a>
-      </div>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a><a href="products.html">Gear</a><a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="cta" href="newsletter.html">Join the List</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Gear We Trust</h1>
+      <p class="note">Some links are affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+      <div class="grid">
+        <div class="col-4">
+          <div class="card">
+            <h3>Z Grills Smoker</h3>
+            <p>Set-it-and-forget-it pellet smoker with real flavor.</p>
+            <p><a class="btn btn-primary" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener">Buy at Z Grills</a></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <h3>BBQGuys Thermometer</h3>
+            <p>Instant-read accuracy so you stop guessing.</p>
+            <p><a class="btn btn-primary" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener">Buy at BBQGuys</a></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <h3>Tool Set (Amazon)</h3>
+            <p>Turn, flip, grab—without burning your hands.</p>
+            <p><a class="btn btn-primary" href="https://www.amazon.com/dp/B07P9VGBPR?tag=YOURTAG-20" target="_blank" rel="noopener">Buy on Amazon</a></p>
+          </div>
+        </div>
+        <!-- Add more product cards as needed -->
+      </div>
+    </section>
   </main>
 
-  <footer><p>&copy; 2025 ChowdownBBQ • Affiliate links used with grit and honesty</p></footer>
+  <footer><p>&copy; 2025 ChowdownBBQ • Built with grit</p></footer>
 </body>
 </html>

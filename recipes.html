@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ChowdownBBQ - About</title>
+  <title>ChowdownBBQ - Recipes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{--bg:#FAF3E0;--surface:#FFF9EE;--text:#2B2B2B;--muted:#5A5A5A;--accent:#4A90E2;--copper:#B87333;--cta:#E4572E;--border:#E6DCC8;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)}
     html,body{background:var(--bg);color:var(--text);margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
-    a{color:var(--accent)} a:hover{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     .container{width:min(1200px,92%);margin:0 auto}
     header{position:sticky;top:0;background:rgba(255,249,238,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
     .navbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
@@ -18,7 +18,10 @@
     .cta{display:inline-block;font-weight:800;background:var(--cta);color:#fff;padding:10px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.04);box-shadow:var(--shadow)}
     .section{padding:34px 0}
     h1{font-size:clamp(28px,4vw,40px);margin:12px 0}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .col-6{grid-column:span 6}.col-12{grid-column:span 12}
+    @media (max-width:900px){.col-6{grid-column:span 12}}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
     footer{margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
   </style>
 </head>
@@ -38,10 +41,33 @@
   </header>
 
   <main class="container">
-    <section class="section card">
-      <h1>Our Story</h1>
-      <p>20 years cooking on U.S. Navy submarines taught us discipline, resourcefulness, and how to feed hard-working people right. ChowdownBBQ brings that same grit to the backyard: simple methods, dependable tools, and food that makes folks go quiet at the table.</p>
-      <p>Here, you’ll find beginner-friendly gear, straight-shooting recipes, and no-BS tips that actually work.</p>
+    <section class="section">
+      <h1>Recipes</h1>
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h3>Beginner’s Pulled Pork (Set-and-Forget)</h3>
+            <p>Low stress, high reward. A forgiving cook that teaches patience and temp control.</p>
+            <ol>
+              <li>Rub: 50/50 salt & pepper + brown sugar & paprika.</li>
+              <li>225–250°F smoker. Fat cap up. Spritz apple juice after 3 hours.</li>
+              <li>Wrap at 165°F. Pull at 203°F. Rest 1 hour. Shred.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Weeknight Chicken Thighs</h3>
+            <p>Crispy skin, juicy meat. Quick brine, hot zone, done.</p>
+            <ul>
+              <li>Dry brine (salt) 2–4 hrs. Pat dry.</li>
+              <li>Cook at 375–425°F until 175°F in the thigh.</li>
+              <li>Finish over direct heat for the crackle.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Add more recipe cards as you go -->
+      </div>
     </section>
   </main>
 
