@@ -15,6 +15,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
   a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
   header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px) saturate(1.2);
     background:rgba(255,249,238,.9); border-bottom:1px solid var(--border);}
@@ -41,22 +42,16 @@
   .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 
-  /* SECTIONS */
+  /* GRID */
   section{padding:26px 0}
   h2{font-family:"Bebas Neue",Inter,sans-serif; font-size: clamp(22px, 3.4vw, 36px); letter-spacing:.6px; margin:0 0 10px}
   .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
   .col-4{grid-column:span 4}.col-6{grid-column:span 6}.col-12{grid-column:span 12}
   @media (max-width:900px){.col-4,.col-6{grid-column:span 12}}
 
-  /* VALUE PROPS */
-  .value{display:flex;gap:12px;align-items:flex-start}
+  /* BADGES */
   .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
     border:1px solid var(--border);background:#fff;color:#7a5b43;font-weight:800;font-size:12px}
-
-  /* CARDS */
-  .gear-card .cta{margin-top:10px}
-  .recipe{display:flex;flex-direction:column;gap:8px}
-  .recipe .thumb{aspect-ratio:16/9;width:100%;border-radius:12px;background:#fff;border:1px solid var(--border)}
 
   /* SIGNUP */
   .signup{background:linear-gradient(180deg, rgba(47,111,62,.08), rgba(47,111,62,.03));
@@ -113,63 +108,40 @@
     </div>
   </section>
 
-  <!-- WHY -->
-  <section aria-labelledby="why-title">
-    <h2 id="why-title">Why ChowdownBBQ</h2>
-    <div class="grid">
-      <div class="col-4 card value">
-        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
-        <div><strong>Built for real life</strong><br><span class="mini">Gear that survives heat, grease, and long Saturdays.</span></div>
-      </div>
-      <div class="col-4 card value">
-        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
-        <div><strong>Beginner to pitmaster</strong><br><span class="mini">Plain-English guides — no gatekeeping.</span></div>
-      </div>
-      <div class="col-4 card value">
-        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
-        <div><strong>Submarine-tested grit</strong><br><span class="mini">20 years Navy — precision and discipline baked in.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED GEAR (Partner links only) -->
+  <!-- FEATURED GEAR with images -->
   <section aria-labelledby="gear-title">
     <div class="badge">Partner Picks</div>
     <h2 id="gear-title">Featured Gear</h2>
     <div class="grid">
-      <article class="col-6 card gear-card">
-        <h3>Z Grills Pellet Smoker</h3>
+      <article class="col-6 card">
+        <img src="z-grills.jpeg" alt="Z Grills Pellet Smoker">
+        <h3 style="margin-top:10px;">Z Grills Pellet Smoker</h3>
         <p class="mini">Set-it-and-forget-it smoke. Great for beginners who still want real flavor.</p>
         <a class="btn primary" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener sponsored nofollow">Buy at Z Grills</a>
       </article>
-      <article class="col-6 card gear-card">
-        <h3>BBQGuys Instant-Read Thermometer</h3>
+      <article class="col-6 card">
+        <img src="thermometer.jpeg" alt="BBQGuys Instant-Read Thermometer">
+        <h3 style="margin-top:10px;">BBQGuys Instant-Read Thermometer</h3>
         <p class="mini">Fast reads. Fewer overcooks. Confidence on every pull.</p>
         <a class="btn primary" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener sponsored nofollow">Buy at BBQGuys</a>
       </article>
     </div>
   </section>
 
-  <!-- RECIPES PREVIEW -->
+  <!-- RECIPES PREVIEW with wings and brisket images -->
   <section aria-labelledby="recipes-title">
     <h2 id="recipes-title">Quick Wins (Recipes)</h2>
     <div class="grid">
-      <article class="col-4 card recipe">
-        <div class="thumb" aria-hidden="true"></div>
-        <strong>3-Step Smoked Chicken Thighs</strong>
-        <span class="mini">Juicy every time. 45 minutes.</span>
+      <article class="col-6 card">
+        <img src="wings.jpg" alt="Smoky BBQ Chicken Wings">
+        <h3 style="margin-top:10px;">Smoky BBQ Chicken Wings</h3>
+        <p class="mini">Perfectly seasoned and grilled to smoky perfection — a crowd favorite.</p>
         <a class="btn" href="recipes.html">Cook it →</a>
       </article>
-      <article class="col-4 card recipe">
-        <div class="thumb" aria-hidden="true"></div>
-        <strong>Weeknight Rib Rub</strong>
-        <span class="mini">No sugar bombs. Just bark.</span>
-        <a class="btn" href="recipes.html">Mix it →</a>
-      </article>
-      <article class="col-4 card recipe">
-        <div class="thumb" aria-hidden="true"></div>
-        <strong>Brisket for First-Timers</strong>
-        <span class="mini">Manage temps, nail the rest.</span>
+      <article class="col-6 card">
+        <img src="brisket.jpg" alt="Texas-Style Smoked Brisket">
+        <h3 style="margin-top:10px;">Texas-Style Smoked Brisket</h3>
+        <p class="mini">Tender slices with a rich bark and juicy center — BBQ at its finest.</p>
         <a class="btn" href="recipes.html">Learn it →</a>
       </article>
     </div>
