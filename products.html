@@ -5,37 +5,38 @@
   <title>ChowdownBBQ — Gear</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{--bg:#FAF3E0;--surface:#FFF9EE;--text:#2B2B2B;--muted:#5A5A5A;--accent:#4A90E2;--copper:#B87333;--cta:#E4572E;--success:#2F6F3E;--border:#E6DCC8;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)}
+    :root{--bg:#FAF3E0;--surface:#FFF9EE;--text:#2B2B2B;--muted:#5A5A5A;--accent:#4A90E2;--copper:#B87333;--border:#E6DCC8;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)}
     html,body{background:var(--bg);color:var(--text);margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
-    *{box-sizing:border-box} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
     .container{width:min(1200px,92%);margin:0 auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,249,238,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
-    .navbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
+    header{position:sticky;top:0;background:rgba(255,249,238,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+    .navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
     .brand-logo{width:42px;height:42px;border-radius:50%;background: radial-gradient(100% 100% at 50% 0%, #FFE7D7 0%, #FFF2E7 40%, #FFD3BE 100%);border:1px solid var(--border);box-shadow:var(--shadow)}
-    .brand-name{font-size:clamp(20px,2vw,24px)} .brand-tag{color:var(--copper);font-weight:800}
+    .brand-name{font-size:24px}.brand-tag{color:var(--copper)}
     .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .nav a{padding:8px 10px;border-radius:10px;font-weight:600;color:var(--text)} .nav a:hover{background:var(--surface)}
-    h1{font-size:clamp(28px,4vw,40px);margin:20px 0}
+    .nav a{padding:8px 10px;border-radius:10px;font-weight:600;color:var(--text)}
+    .nav a:hover{background:var(--surface)}
+    h1{margin:20px 0}
     .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
-    .col-4{grid-column:span 4} .col-12{grid-column:span 12}
-    @media (max-width:900px){.col-4{grid-column:span 12}}
+    .col-4{grid-column:span 4}
     .product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
-    .product-card h3{margin:10px 0 6px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:800;border:1px solid transparent;background:var(--accent);color:#fff}
-    .btn:hover{filter:brightness(1.05)}
+    .product-card h3{margin:10px 0}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:800;background:var(--accent);color:#fff;text-decoration:none;display:inline-block}
     footer{margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center;font-size:.9rem}
-    .disclosure{font-size:12px;color:var(--muted);margin-top:8px}
+    .disclosure{font-size:12px;color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
     <div class="container navbar">
       <div class="brand">
-        <div class="brand-logo" aria-hidden="true"></div>
-        <div><div class="brand-name">CHOWDOWN<span class="brand-tag">BBQ</span></div><div style="font-size:12px;color:#7A624A;">Gear • Grit • Grillin’</div></div>
+        <div class="brand-logo"></div>
+        <div>
+          <div class="brand-name">CHOWDOWN<span class="brand-tag">BBQ</span></div>
+          <div style="font-size:12px;color:#7A624A;">Gear • Grit • Grillin’</div>
+        </div>
       </div>
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav">
         <a href="index.html">Home</a>
         <a href="products.html">Gear</a>
         <a href="recipes.html">Recipes</a>
@@ -44,73 +45,46 @@
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
         <a class="cta" href="newsletter.html">Join the List</a>
-        <!-- NEW: Site-wide Amazon button with full tracking URL -->
-        <a class="cta" target="_blank" rel="noopener sponsored nofollow"
-           href="https://www.amazon.com?hvadid=675149238952&hvpos=&hvnetw=g&hvrand=8472717150423111052&hvpone=&hvptwo=&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9003357&hvtargid=kwd-10573980&hydadcr=28883_14580410&linkCode=ll2&tag=chowdownbbq20-20&linkId=e4686e5f911a5cdc14e3eab9ad7306e0&language=en_US&ref_=as_li_ss_tl">Shop Amazon</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <h1>Gear We Trust</h1>
-
-    <!-- NEW: Top Amazon callout -->
-    <div class="product-card" style="margin:10px 0 18px;">
-      <strong>Want the full catalog?</strong>
-      <p style="margin:6px 0 10px">Browse our Amazon picks and deals.</p>
-      <a class="btn" target="_blank" rel="noopener sponsored nofollow"
-         href="https://www.amazon.com?hvadid=675149238952&hvpos=&hvnetw=g&hvrand=8472717150423111052&hvpone=&hvptwo=&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9003357&hvtargid=kwd-10573980&hydadcr=28883_14580410&linkCode=ll2&tag=chowdownbbq20-20&linkId=e4686e5f911a5cdc14e3eab9ad7306e0&language=en_US&ref_=as_li_ss_tl">Shop Amazon Gear</a>
-    </div>
-
     <div class="grid">
-      <div class="col-4">
-        <div class="product-card">
-          <h3>Z Grills Smoker</h3>
-          <p>Beginner-friendly pellet smoker with true smoke flavor.</p>
-          <a class="btn" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener sponsored nofollow">Buy at Z Grills</a>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="product-card">
-          <h3>BBQGuys Thermometer</h3>
-          <p>Fast reads. Fewer “whoops” moments.</p>
-          <a class="btn" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener sponsored nofollow">Buy at BBQGuys</a>
-        </div>
-      </div>
       <div class="col-4">
         <div class="product-card">
           <h3>Amazon Tool Set</h3>
           <p>Solid grip. Solid steel. No bend.</p>
-          <a class="btn" href="https://www.amazon.com/dp/B07P9VGBPR?tag=chowdownbbq20-20" target="_blank" rel="noopener sponsored nofollow">Buy on Amazon</a>
+          <a class="btn" target="_blank" rel="noopener sponsored nofollow"
+             href="https://www.amazon.com/s?k=bbq+tool+set+stainless+steel&tag=chowdownbbq20-20&linkCode=ll2&ref_=as_li_ss_tl">Buy on Amazon</a>
         </div>
       </div>
-    </div>
-
-    <h2 style="margin-top:28px">More Picks</h2>
-    <div class="grid">
       <div class="col-4">
         <div class="product-card">
           <h3>Heat-Resistant Gloves</h3>
           <p>Grab grates without the panic.</p>
-          <a class="btn" href="https://www.amazon.com/dp/B07C4S1J68?tag=chowdownbbq20-20" target="_blank" rel="noopener sponsored nofollow">Buy on Amazon</a>
+          <a class="btn" target="_blank" rel="noopener sponsored nofollow"
+             href="https://www.amazon.com/s?k=bbq+heat+resistant+gloves&tag=chowdownbbq20-20&linkCode=ll2&ref_=as_li_ss_tl">Buy on Amazon</a>
         </div>
       </div>
       <div class="col-4">
         <div class="product-card">
           <h3>Grill Mat</h3>
           <p>Protect the deck. Keep cleanup easy.</p>
-          <a class="btn" href="https://www.amazon.com/dp/B089Q6Y8ZQ?tag=chowdownbbq20-20" target="_blank" rel="noopener sponsored nofollow">Buy on Amazon</a>
+          <a class="btn" target="_blank" rel="noopener sponsored nofollow"
+             href="https://www.amazon.com/s?k=grill+mat+extra+large&tag=chowdownbbq20-20&linkCode=ll2&ref_=as_li_ss_tl">Buy on Amazon</a>
         </div>
       </div>
       <div class="col-4">
         <div class="product-card">
           <h3>Wood Pellets (Hickory)</h3>
           <p>Reliable smoke, bold flavor.</p>
-          <a class="btn" href="https://www.amazon.com/dp/B01N9Z1Z8H?tag=chowdownbbq20-20" target="_blank" rel="noopener sponsored nofollow">Buy on Amazon</a>
+          <a class="btn" target="_blank" rel="noopener sponsored nofollow"
+             href="https://www.amazon.com/s?k=hickory+wood+pellets+20lb&tag=chowdownbbq20-20&linkCode=ll2&ref_=as_li_ss_tl">Buy on Amazon</a>
         </div>
       </div>
     </div>
-    <p style="font-size:12px;color:#5A5A5A;margin-top:10px">Tip: swap the example ASINs above with your real picks anytime.</p>
   </main>
 
   <footer>
