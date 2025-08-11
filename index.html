@@ -57,7 +57,7 @@
   .signup{background:linear-gradient(180deg, rgba(47,111,62,.08), rgba(47,111,62,.03));
     border:1px solid rgba(47,111,62,.25);border-radius:var(--radius);padding:18px}
   form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-  input[type="email"]{flex:1;min-width:240px;padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--ink)}
+  input[type="email"]{flex:1;min-width:240px;padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:#fff;color:#1f2328}
   button[type="submit"]{padding:14px 16px;border-radius:12px;border:none;font-weight:800;background:var(--accent);color:#fff}
 
   footer{padding:34px 0 60px;color:#6b5a49;border-top:1px solid var(--border)}
@@ -108,19 +108,19 @@
     </div>
   </section>
 
-  <!-- FEATURED GEAR with images -->
+  <!-- FEATURED GEAR with image fallbacks -->
   <section aria-labelledby="gear-title">
     <div class="badge">Partner Picks</div>
     <h2 id="gear-title">Featured Gear</h2>
     <div class="grid">
       <article class="col-6 card">
-        <img src="z-grills.jpg" alt="Z Grills Pellet Smoker">
+        <img class="img-fallback" data-candidates='["z-grills.jpg","images/z-grills.jpg","z-grills.jpeg","images/z-grills.jpeg","Z-Grills.jpg","Z-GRILLS.jpg"]' alt="Z Grills Pellet Smoker">
         <h3 style="margin-top:10px;">Z Grills Pellet Smoker</h3>
         <p class="mini">Set-it-and-forget-it smoke. Great for beginners who still want real flavor.</p>
         <a class="btn primary" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener sponsored nofollow">Buy at Z Grills</a>
       </article>
       <article class="col-6 card">
-        <img src="thermometer.jpg" alt="BBQGuys Instant-Read Thermometer">
+        <img class="img-fallback" data-candidates='["thermometer.jpg","images/thermometer.jpg","thermometer.jpeg","images/thermometer.jpeg","Thermometer.jpg","THERMOMETER.jpg"]' alt="BBQGuys Instant-Read Thermometer">
         <h3 style="margin-top:10px;">BBQGuys Instant-Read Thermometer</h3>
         <p class="mini">Fast reads. Fewer overcooks. Confidence on every pull.</p>
         <a class="btn primary" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener sponsored nofollow">Buy at BBQGuys</a>
@@ -185,6 +185,27 @@
   </div>
 </footer>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+  // Year stamp
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Smart image fallbacks
+  function tryLoad(img, list, i){
+    if(i >= list.length){ return; }
+    var url = list[i];
+    var test = new Image();
+    test.onload = function(){ img.src = url; };
+    test.onerror = function(){ tryLoad(img, list, i+1); };
+    test.src = url + "?v=" + Date.now();
+  }
+  document.querySelectorAll('.img-fallback').forEach(function(img){
+    try {
+      var candidates = JSON.parse(img.getAttribute('data-candidates'));
+      tryLoad(img, candidates, 0);
+    } catch(e) {
+      console.warn('Bad candidates list', e);
+    }
+  });
+</script>
 </body>
 </html>
