@@ -1,92 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ChowdownBBQ — Gear, Grit, Grillin’</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root{
-      --bg:#FAF3E0;--surface:#FFF9EE;--text:#2B2B2B;--muted:#5A5A5A;
-      --accent:#4A90E2;--copper:#B87333;--cta:#E4572E;
-      --border:#E6DCC8;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)
-    }
-    html,body{background:var(--bg);color:var(--text);margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
-    .container{width:min(1200px,92%);margin:0 auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,249,238,.9);
-      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
-    .navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand-logo{width:42px;height:42px;border-radius:50%;
-      background: radial-gradient(100% 100% at 50% 0%, #FFE7D7 0%, #FFF2E7 40%, #FFD3BE 100%);
-      border:1px solid var(--border);box-shadow:var(--shadow)}
-    .brand-name{font-size:24px}
-    .brand-tag{color:var(--copper)}
-    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .nav a{padding:8px 10px;border-radius:10px;font-weight:600;color:var(--text)}
-    .nav a:hover{background:var(--surface)}
-    .cta{background:var(--cta);color:#fff;padding:12px 18px;border-radius:14px;box-shadow:var(--shadow);font-weight:800}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:40px 0 28px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-    .badge{padding:6px 10px;border-radius:999px;background:#ECF3FE;color:#173B75;font-weight:700}
-    h1{font-size:clamp(36px,5vw,56px);line-height:1.1;margin:10px 0}
-    .lead{color:var(--muted)}
-    .btn{padding:12px 16px;border-radius:12px;font-weight:800;text-decoration:none;display:inline-block}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-outline{border:1px solid var(--border);background:transparent;color:var(--text)}
-    .card{background:var(--surface);border:1px solid var(--border);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    footer{margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center;font-size:.9rem}
-    .disclosure{font-size:12px;color:var(--muted);margin-top:8px}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChowdownBBQ — Gear, Grit, Grillin’</title>
+<meta name="description" content="Real BBQ for real folks — gear that lasts, tips that matter, and flavors that hit hard. From a Navy sub galley to your backyard.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF3E0; --surface:#FFF9EE; --muted:#5A5A5A; --ink:#1f2328;
+    --accent:#e4572e; --accent-2:#2f6f3e; --border:#E6DCC8;
+    --radius:18px; --shadow:0 18px 40px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px) saturate(1.2);
+    background:rgba(255,249,238,.9); border-bottom:1px solid var(--border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#ffd1b8,#ffe7d7); border:1px solid var(--border); box-shadow:var(--shadow)}
+  .name{font-weight:800;letter-spacing:.4px}
+  .navlinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .navlinks a{padding:8px 10px;border-radius:10px;color:#533f2e}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.3px;
+    padding:12px 16px;border-radius:14px;border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow)}
+  .btn.primary{background:var(--accent);color:#fff;border:none}
+  .btn.ghost{background:transparent}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:48px 0 28px}
+  @media (max-width:900px){.hero-inner{grid-template-columns:1fr}}
+  .kicker{display:inline-flex;align-items:center;gap:8px;color:#7a5b43;font-weight:700}
+  .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+  h1{font-family:"Bebas Neue",Inter,sans-serif;letter-spacing:.5px;margin:10px 0 12px;
+     font-size: clamp(36px, 6vw, 72px); line-height:1}
+  .lead{color:var(--muted);font-size:clamp(15px,1.8vw,18px)}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+
+  /* SECTIONS */
+  section{padding:26px 0}
+  h2{font-family:"Bebas Neue",Inter,sans-serif; font-size: clamp(22px, 3.4vw, 36px); letter-spacing:.6px; margin:0 0 10px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .col-4{grid-column:span 4}.col-6{grid-column:span 6}.col-12{grid-column:span 12}
+  @media (max-width:900px){.col-4,.col-6{grid-column:span 12}}
+
+  /* VALUE PROPS */
+  .value{display:flex;gap:12px;align-items:flex-start}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
+    border:1px solid var(--border);background:#fff;color:#7a5b43;font-weight:800;font-size:12px}
+
+  /* CARDS */
+  .gear-card .cta{margin-top:10px}
+  .recipe{display:flex;flex-direction:column;gap:8px}
+  .recipe .thumb{aspect-ratio:16/9;width:100%;border-radius:12px;background:#fff;border:1px solid var(--border)}
+
+  /* SIGNUP */
+  .signup{background:linear-gradient(180deg, rgba(47,111,62,.08), rgba(47,111,62,.03));
+    border:1px solid rgba(47,111,62,.25);border-radius:var(--radius);padding:18px}
+  form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  input[type="email"]{flex:1;min-width:240px;padding:14px 12px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--ink)}
+  button[type="submit"]{padding:14px 16px;border-radius:12px;border:none;font-weight:800;background:var(--accent);color:#fff}
+
+  footer{padding:34px 0 60px;color:#6b5a49;border-top:1px solid var(--border)}
+  .footer-grid{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .mini{font-size:12px;color:#6b5a49}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container navbar">
-      <div class="brand">
-        <div class="brand-logo"></div>
-        <div>
-          <div class="brand-name">CHOWDOWN<span class="brand-tag">BBQ</span></div>
-          <div style="font-size:12px;color:#7A624A;">Gear • Grit • Grillin’</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Gear</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a class="cta" href="newsletter.html">Join the List</a>
-      </nav>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="name">CHOWDOWNBBQ</div>
     </div>
-  </header>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="products.html">Gear</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="newsletter.html">Join the List</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="hero">
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
       <div>
-        <span class="badge">Fresh look • Same heat</span>
+        <div class="kicker"><span class="dot"></span><span>Hard work. No shortcuts.</span></div>
         <h1>Real BBQ. Zero Fluff.</h1>
-        <p class="lead">From a Navy sub galley to your backyard — tools that work, tips that matter, and meat that’ll make neighbors wander over “just to say hi.”</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-          <a class="btn btn-primary" href="products.html">See the Gear</a>
-          <a class="btn btn-outline" href="Top-10-BBQ-Mistakes.pdf" download>Free BBQ Guide (PDF)</a>
+        <p class="lead">From a Navy sub galley to your backyard — gear that lasts, tips that matter, and flavors that hit like a freight train.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="products.html">See the Gear</a>
+          <a class="btn" href="Top-10-BBQ-Mistakes.pdf" download>Free BBQ Guide (PDF)</a>
         </div>
       </div>
       <div class="card">
         <strong>Starter Picks</strong>
-        <ul style="margin:10px 0 0;padding-left:18px">
+        <ul style="margin:10px 0 0 18px;color:#6b5a49">
           <li>Pellet smoker that won’t fight you</li>
-          <li>Instant-read thermometer</li>
-          <li>Tool set that won’t bend on brisket</li>
+          <li>Instant-read thermometer (hit temps, not guesses)</li>
+          <li>Tool set that won’t twist on brisket</li>
         </ul>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 ChowdownBBQ • Built with grit</p>
-    <p class="disclosure">This site uses affiliate links. We may earn a commission from qualifying purchases from our partners.</p>
-  </footer>
+  <!-- WHY -->
+  <section aria-labelledby="why-title">
+    <h2 id="why-title">Why ChowdownBBQ</h2>
+    <div class="grid">
+      <div class="col-4 card value">
+        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
+        <div><strong>Built for real life</strong><br><span class="mini">Gear that survives heat, grease, and long Saturdays.</span></div>
+      </div>
+      <div class="col-4 card value">
+        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
+        <div><strong>Beginner to pitmaster</strong><br><span class="mini">Plain-English guides — no gatekeeping.</span></div>
+      </div>
+      <div class="col-4 card value">
+        <div style="width:18px;height:18px;border-radius:6px;background:linear-gradient(135deg,#61d38e,#9cf3bf)"></div>
+        <div><strong>Submarine-tested grit</strong><br><span class="mini">20 years Navy — precision and discipline baked in.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED GEAR (Partner links only) -->
+  <section aria-labelledby="gear-title">
+    <div class="badge">Partner Picks</div>
+    <h2 id="gear-title">Featured Gear</h2>
+    <div class="grid">
+      <article class="col-6 card gear-card">
+        <h3>Z Grills Pellet Smoker</h3>
+        <p class="mini">Set-it-and-forget-it smoke. Great for beginners who still want real flavor.</p>
+        <a class="btn primary" href="https://zgrills.com/?aff=4738" target="_blank" rel="noopener sponsored nofollow">Buy at Z Grills</a>
+      </article>
+      <article class="col-6 card gear-card">
+        <h3>BBQGuys Instant-Read Thermometer</h3>
+        <p class="mini">Fast reads. Fewer overcooks. Confidence on every pull.</p>
+        <a class="btn primary" href="https://bbqguys.sjv.io/9LZ9Mj" target="_blank" rel="noopener sponsored nofollow">Buy at BBQGuys</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- RECIPES PREVIEW -->
+  <section aria-labelledby="recipes-title">
+    <h2 id="recipes-title">Quick Wins (Recipes)</h2>
+    <div class="grid">
+      <article class="col-4 card recipe">
+        <div class="thumb" aria-hidden="true"></div>
+        <strong>3-Step Smoked Chicken Thighs</strong>
+        <span class="mini">Juicy every time. 45 minutes.</span>
+        <a class="btn" href="recipes.html">Cook it →</a>
+      </article>
+      <article class="col-4 card recipe">
+        <div class="thumb" aria-hidden="true"></div>
+        <strong>Weeknight Rib Rub</strong>
+        <span class="mini">No sugar bombs. Just bark.</span>
+        <a class="btn" href="recipes.html">Mix it →</a>
+      </article>
+      <article class="col-4 card recipe">
+        <div class="thumb" aria-hidden="true"></div>
+        <strong>Brisket for First-Timers</strong>
+        <span class="mini">Manage temps, nail the rest.</span>
+        <a class="btn" href="recipes.html">Learn it →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="grid" aria-labelledby="about-title">
+    <div class="col-6 card">
+      <h2 id="about-title">From the Deep to the Pit</h2>
+      <p class="lead" style="margin:8px 0;">
+        I cooked for crews who couldn’t afford mistakes — 20 years on Navy submarines. 
+        That same standard drives everything here: gear that holds up, recipes that work, and straight talk that respects your time.
+      </p>
+      <a class="btn" href="about.html">Read the story →</a>
+    </div>
+    <div class="col-6 card">
+      <div style="aspect-ratio:16/9;border:1px solid var(--border);border-radius:12px;background:linear-gradient(135deg,#fff,#f4efe6)"></div>
+      <span class="mini">Video intro coming soon.</span>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section aria-labelledby="join-title">
+    <div class="signup">
+      <h2 id="join-title" style="margin:0">Join the List</h2>
+      <p class="mini" style="margin:6px 0 0">Get first dibs on new guides, gear drops, and deals. No spam.</p>
+      <form name="cdbbq-signup" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="cdbbq-signup">
+        <label class="mini" for="email" style="position:absolute;left:-9999px">Email</label>
+        <input id="email" type="email" name="email" placeholder="you@email.com" required>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="mini">© <span id="y"></span> ChowdownBBQ. Built with grit.</div>
+    <div class="mini">This site uses affiliate links to our partners (like Z Grills & BBQGuys). We may earn a commission.</div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
